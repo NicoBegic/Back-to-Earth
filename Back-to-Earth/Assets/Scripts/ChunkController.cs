@@ -41,13 +41,13 @@ public class ChunkController : MonoBehaviour
 
     private void LoadChunk()
     {
-        InitChunk();
+        //InitChunk();
 
-        GameObject latestPlatform = new GameObject();
+        GameObject latestPlatform;
 
         float firstposX = this.transform.position.x + Random.Range(-this.transform.localScale.x / 2, this.transform.localScale.x / 2);
-        float firstposY = this.transform.position.y + ((this.transform.localScale.z /2) / Mathf.Cos(this.transform.rotation.eulerAngles.x));
-        float firstposZ = this.transform.position.z - this.transform.localScale.z /2;
+        float firstposY = this.transform.position.y - ((this.transform.localScale.z /2) / Mathf.Cos(this.transform.rotation.eulerAngles.x));
+        float firstposZ = this.transform.position.z + this.transform.localScale.z /2;
         Instantiate(Platform, new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
 
         latestPlatform = Platform;
