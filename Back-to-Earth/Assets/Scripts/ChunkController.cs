@@ -15,10 +15,12 @@ public class ChunkController : MonoBehaviour
     public float MaxFallDistance;
 
     private bool loaded;
+    private BoxCollider boxCollider;
 
     void Start()
     {
-        transform.localScale = new Vector3(25, 25, 50);
+        boxCollider = GetComponent<BoxCollider>();
+        transform.localScale = new Vector3(25, 10, 50);
     }
 
     void Update()
@@ -41,14 +43,15 @@ public class ChunkController : MonoBehaviour
 
     private void LoadChunk()
     {
-        //InitChunk();
+        InitChunk();
 
         GameObject latestPlatform;
 
-        float firstposX = this.transform.position.x + Random.Range(-this.transform.localScale.x / 2, this.transform.localScale.x / 2);
-        float firstposY = this.transform.position.y - ((this.transform.localScale.z /2) / Mathf.Cos(this.transform.rotation.eulerAngles.x));
-        float firstposZ = this.transform.position.z + this.transform.localScale.z /2;
+        float firstposX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
+        float firstposY = this.transform.position.y + (Mathf.Sin(this.transform.rotation.eulerAngles.x) / (this.boxCollider.bounds.size.z /2));
+        float firstposZ = this.transform.position.z - this.boxCollider.bounds.size.z / 2;
         Instantiate(Platform, new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
+        this.Platform.transform.position = new Vector3(firstposX, firstposY, firstposZ);
 
         latestPlatform = Platform;
 
@@ -56,11 +59,13 @@ public class ChunkController : MonoBehaviour
         {
             for (int t = 0; t < Random.Range(1, MaxPlatformsInRow); t++)
             {
-                float positionX = this.transform.position.x + Random.Range(-this.transform.localScale.x / 2, this.transform.localScale.x / 2);
-                float positionY = latestPlatform.transform.position.y - (latestPlatform.transform.localScale.z / 2) - Random.Range(MinFallDistance, MaxFallDistance);
-                float positionZ = latestPlatform.transform.position.z + (latestPlatform.transform.localScale.z / 2) + Random.Range(MinPlatformDistance, MaxPlatformDistance);
+                float positionX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x /2, this.boxCollider.bounds.size.x /2);
+                float positionY = latestPlatform.transform.position.y - (latestPlatform.GetComponent<BoxCollider>().bounds.size.y) - Random.Range(MinFallDistance, MaxFallDistance);
+                float positionZ = latestPlatform.transform.position.z + (latestPlatform.GetComponent<BoxCollider>().bounds.size.z) + Random.Range(MinPlatformDistance, MaxPlatformDistance);
 
                 Instantiate(Platform, new Vector3(positionX, positionY, positionZ), Quaternion.identity);
+                Platform.transform.position = new Vector3(positionX, positionY, positionZ);
+               
             }
 
             latestPlatform = Platform;
@@ -69,6 +74,6 @@ public class ChunkController : MonoBehaviour
 
     private void InitChunk()
     {
-        Instantiate(NextChunk, this.transform.position + new Vector3(0, -this.transform.localScale.y / 2, this.transform.localScale.z / 2), this.transform.rotation);
+        Instantiate(NextChunk, this.transform.position + new Vector3(0, -this.boxCollider.bounds.size.y , this.boxCollider.bounds.size.z ), this.transform.rotation);
     }
 }
