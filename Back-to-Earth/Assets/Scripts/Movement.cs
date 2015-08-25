@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float JumpSpeed = 500f;
 
     private bool isGrounded;
+    public bool doubleJump = false;
 
 	void Update () 
     {
@@ -23,15 +24,23 @@ public class Movement : MonoBehaviour
     {
         var v = Input.GetAxis("Vertical");
         var h = Input.GetAxis("Horizontal");
-        transform.Translate(v * MovementSpeed * Time.deltaTime, 0, h * MovementSpeed * Time.deltaTime);
+        transform.Translate(h * MovementSpeed * Time.deltaTime, 0, v * MovementSpeed * Time.deltaTime);
     }
 
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            GetComponent<Rigidbody>().AddForce(0, JumpSpeed, 0);
-            isGrounded = false;
+            if (doubleJump)
+            {
+                GetComponent<Rigidbody>().AddForce(0, JumpSpeed, 0);
+                doubleJump = false;
+            }
+            else
+            {
+                GetComponent<Rigidbody>().AddForce(0, JumpSpeed, 0);
+                isGrounded = false;
+            }
         }
     }
 }
