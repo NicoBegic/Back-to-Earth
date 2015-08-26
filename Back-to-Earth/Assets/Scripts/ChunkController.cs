@@ -48,11 +48,14 @@ public class ChunkController : MonoBehaviour
 
         latestPlatform = new GameObject();
 
-        float firstposX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
-        float firstposY = this.transform.position.y + (Mathf.Sin(this.transform.rotation.eulerAngles.x) / (this.boxCollider.bounds.size.z /2));
-        float firstposZ = this.transform.position.z - this.boxCollider.bounds.size.z / 2;
-        Instantiate(Platform, new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
-        this.Platform.transform.position = new Vector3(firstposX, firstposY, firstposZ);
+        for (int p = 0; p < Random.Range(1, TempMaxPlatformsInRow); p++)
+        {
+            float firstposX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
+            float firstposY = this.transform.position.y + (Mathf.Sin(this.transform.rotation.eulerAngles.x) / (this.boxCollider.bounds.size.z / 2)) - Random.Range(this.MinFallDistance, MaxFallDistance);
+            float firstposZ = this.transform.position.z - this.boxCollider.bounds.size.z / 2;
+            Instantiate(Platform, new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
+            this.Platform.transform.position = new Vector3(firstposX, firstposY, firstposZ);
+        }
 
         latestPlatform.transform.position = Platform.transform.position;
 
@@ -82,6 +85,11 @@ public class ChunkController : MonoBehaviour
        // this.boxCollider.bounds.size.x 
         return 0;
     }
+
+    //private float CalculateRowCount()
+    //{
+
+    //}
 
     private void InitChunk()
     {
