@@ -6,22 +6,12 @@ public class PlatformControler : MonoBehaviour
     public GameObject Chunk;
 
     private Platform platformType;
-
+    
     public Platform PlatformType 
     {
         get { return platformType; }
         set { platformType = value; } 
     }
-
-	void Start () 
-    {
-	        
-	}
-	
-	void Update () 
-    {
-	
-	}
 
     void OnCollisionStay(Collision collision)
     {

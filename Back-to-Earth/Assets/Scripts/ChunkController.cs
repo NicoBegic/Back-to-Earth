@@ -3,9 +3,10 @@ using System.Collections;
 
 public class ChunkController : MonoBehaviour
 {
+    public GameObject[] Platforms;
+
     public GameObject Player;
     public GameObject NextChunk;
-    public GameObject Platform;
 
     public int RowCount;
     public float MinPlatformDistance;
@@ -16,6 +17,7 @@ public class ChunkController : MonoBehaviour
     private bool loaded;
     private BoxCollider boxCollider;
     private GameObject latestPlatform;
+    private int randomPlatform;
 
     void Start()
     {
@@ -49,14 +51,15 @@ public class ChunkController : MonoBehaviour
 
         for (int p = 0; p < Random.Range(1, MaxPlatformsInRow()); p++)
         {
+            randomPlatform = Random.Range(0, Platforms.Length);
             float firstposX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
             float firstposY = this.transform.position.y + (Mathf.Sin(this.transform.rotation.eulerAngles.x) / (this.boxCollider.bounds.size.z / 2)) - Random.Range(this.MinFallDistance, MaxFallDistance);
             float firstposZ = this.transform.position.z - this.boxCollider.bounds.size.z / 2;
-            Instantiate(Platform, new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
-            this.Platform.transform.position = new Vector3(firstposX, firstposY, firstposZ);
+            Instantiate(Platforms[randomPlatform], new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
+            this.Platforms[randomPlatform].transform.position = new Vector3(firstposX, firstposY, firstposZ);
         }
 
-        latestPlatform.transform.position = Platform.transform.position;
+        latestPlatform.transform.position = Platforms[randomPlatform].transform.position;
 
         for (int i = 0; i < RowCount; i++)
          {
@@ -65,24 +68,28 @@ public class ChunkController : MonoBehaviour
                 CreatePlatform();
             }
 
-            latestPlatform.transform.position = Platform.transform.position;
+            latestPlatform.transform.position = Platforms[randomPlatform].transform.position;
         }
     }
 
     private void CreatePlatform()
     {
-        float positionX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
-        float positionY = latestPlatform.transform.position.y - (Platform.GetComponent<BoxCollider>().bounds.size.y) - Random.Range(MinFallDistance, MaxFallDistance);
-        float positionZ = latestPlatform.transform.position.z + (Platform.GetComponent<BoxCollider>().bounds.size.z) + Random.Range(MinPlatformDistance, MaxPlatformDistance);
+        randomPlatform = Random.Range(0, Platforms.Length);
 
-        Instantiate(Platform, new Vector3(positionX, positionY, positionZ), Quaternion.identity);
-        Platform.transform.position = new Vector3(positionX, positionY, positionZ);
+        float positionX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
+        float positionY = latestPlatform.transform.position.y - (Platforms[randomPlatform].GetComponentInChildren<BoxCollider>().bounds.size.y) - Random.Range(MinFallDistance, MaxFallDistance);
+        float positionZ = latestPlatform.transform.position.z + (Platforms[randomPlatform].GetComponentInChildren<BoxCollider>().bounds.size.z) + Random.Range(MinPlatformDistance, MaxPlatformDistance);
+
+        Instantiate(Platforms[randomPlatform], new Vector3(positionX, positionY, positionZ), Quaternion.identity);
+        Platforms[randomPlatform].transform.position = new Vector3(positionX, positionY, positionZ);
     }
 
     private int MaxPlatformsInRow()
     {
-        float maxPlatforms = this.boxCollider.bounds.size.x / Platform.transform.localScale.x;
-
+        //doesn't find collider?!
+        BoxCollider box = Platforms[randomPlatform].GetComponentInChildren<BoxCollider>();
+        float maxPlatforms = this.boxCollider.bounds.size.x / box.size.x;
+        
         return (int)maxPlatforms;
     }
 
