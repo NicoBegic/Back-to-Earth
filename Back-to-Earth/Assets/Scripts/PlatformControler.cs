@@ -6,18 +6,32 @@ public class PlatformControler : MonoBehaviour
     public GameObject Chunk;
 
     private Platform platformType;
-    
+    private Rigidbody rigidbody;
+
+    private bool falls;
+
     public Platform PlatformType 
     {
         get { return platformType; }
         set { platformType = value; } 
     }
 
+    void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
+
     void OnCollisionStay(Collision collision)
     {
-        if (!collision.collider.gameObject.Equals(this.gameObject) && collision.collider.gameObject.tag == this.gameObject.tag)
+        if (!collision.gameObject.Equals(this.gameObject) && collision.collider.gameObject.tag == this.gameObject.tag && falls == false)
         {
             Reposition();
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+
+            this.rigidbody.constraints = RigidbodyConstraints.None;
+            falls = true;
         }
     }
 

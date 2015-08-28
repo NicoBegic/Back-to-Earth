@@ -6,8 +6,8 @@ public class Playercontroller : MonoBehaviour
     public float speed;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
 	}
 	
 	// Update is called once per frame
