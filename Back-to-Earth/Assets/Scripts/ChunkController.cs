@@ -9,8 +9,6 @@ public class ChunkController : MonoBehaviour
     public GameObject NextChunk;
 
     public int RowCount;
-    public float MinPlatformDistance;
-    public float MaxPlatformDistance;
     public float MinFallDistance;
     public float MaxFallDistance;
 
@@ -23,6 +21,7 @@ public class ChunkController : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider>();
         transform.localScale = new Vector3(25, 10, 50);
+
     }
 
     void Update()
@@ -77,8 +76,8 @@ public class ChunkController : MonoBehaviour
         randomPlatform = Random.Range(0, Platforms.Length);
 
         float positionX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
-        float positionY = latestPlatform.transform.position.y - (Platforms[randomPlatform].GetComponentInChildren<BoxCollider>().bounds.size.y) - Random.Range(MinFallDistance, MaxFallDistance);
-        float positionZ = latestPlatform.transform.position.z + (Platforms[randomPlatform].GetComponentInChildren<BoxCollider>().bounds.size.z) + Random.Range(MinPlatformDistance, MaxPlatformDistance);
+        float positionY = latestPlatform.transform.position.y - (Platforms[randomPlatform].GetComponent<BoxCollider>().bounds.size.y) - Random.Range(MinFallDistance, MaxFallDistance);
+        float positionZ = latestPlatform.transform.position.z + (Platforms[randomPlatform].GetComponent<BoxCollider>().bounds.size.z) + CalculateMaxPlatformDistance(); //Random.Range(CalculateMinPlatformDistance(), CalculateMaxPlatformDistance());
 
         Instantiate(Platforms[randomPlatform], new Vector3(positionX, positionY, positionZ), Quaternion.identity);
         Platforms[randomPlatform].transform.position = new Vector3(positionX, positionY, positionZ);
@@ -86,18 +85,28 @@ public class ChunkController : MonoBehaviour
 
     private int MaxPlatformsInRow()
     {
-        //doesn't find collider?!
-        BoxCollider box = Platforms[randomPlatform].GetComponentInChildren<BoxCollider>();
+        BoxCollider box = Platforms[randomPlatform].GetComponent<BoxCollider>();
         float maxPlatforms = this.boxCollider.bounds.size.x / box.size.x;
         
         return (int)maxPlatforms;
     }
 
-    //private float CalculatePlatformDistance()
-    //{
-    //    float  this.boxCollider.bounds.size.z / RowCount
-    //    return 0;
-    //}
+    private float CalculateMaxPlatformDistance()
+    {
+        BoxCollider box = Platforms[randomPlatform].GetComponent<BoxCollider>();
+
+        float maxDistance = (this.boxCollider.bounds.size.z - (RowCount * box.size.z)) / RowCount;
+        return maxDistance;
+    }
+
+    private float CalculateMinPlatformDistance()
+    {
+        BoxCollider box = Platforms[randomPlatform].GetComponent<BoxCollider>();
+
+        float minDistance = box.size.z;
+
+        return minDistance;
+    }
 
     private void InitChunk()
     {
