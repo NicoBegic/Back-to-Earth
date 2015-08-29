@@ -8,7 +8,9 @@ public class PlatformControler : MonoBehaviour
     private Platform platformType;
     private Rigidbody rigidbody;
 
-    private bool falls;
+    public bool Falls;
+    private int timer = 100;
+    private bool stepped;
 
     public Platform PlatformType 
     {
@@ -19,20 +21,45 @@ public class PlatformControler : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+
+        GameManager.AddPlatform(this);
+    }
+
+    void Update()
+    {
+        ActualiseLifeTime();
     }
 
     void OnCollisionStay(Collision collision)
     {
-        if (!collision.gameObject.Equals(this.gameObject) && collision.collider.gameObject.tag == this.gameObject.tag && falls == false)
+        if (!collision.gameObject.Equals(this.gameObject) && collision.collider.gameObject.tag == this.gameObject.tag 
+            && Falls == false && collision.gameObject.GetComponent<PlatformControler>().Falls == false)
         {
             Reposition();
         }
         if (collision.gameObject.tag == "Player")
         {
-
-            this.rigidbody.constraints = RigidbodyConstraints.None;
-            falls = true;
+            stepped = true;
+            Falls = true;
         }
+    }
+
+    private void ActualiseLifeTime()
+    {
+        if (stepped)
+        {
+            timer--;
+        }
+        if (timer <= 0)
+        {
+            Fall();
+        }
+    }
+
+    public void Fall()
+    {
+        this.rigidbody.constraints = RigidbodyConstraints.None;
+        GameManager.RemovePlatform(this);
     }
 
     private void Reposition()

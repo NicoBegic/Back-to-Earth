@@ -21,7 +21,6 @@ public class ChunkController : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider>();
         transform.localScale = new Vector3(25, 10, 50);
-
     }
 
     void Update()
