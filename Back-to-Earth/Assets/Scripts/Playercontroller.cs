@@ -3,23 +3,35 @@ using System.Collections;
 
 public class Playercontroller : MonoBehaviour 
 {
-    public float speed;
+    public float MovementSpeed = 2f;
+    public float JumpSpeed = 500f;
 
-	// Use this for initialization
-	void Start () 
+    private bool isGrounded;
+
+    void Update()
     {
-	}
-	
-	// Update is called once per frame
-	void Update () 
+        Move();
+        Jump();
+    }
+
+    void OnCollisionEnter()
     {
-        if (Input.GetAxis("Horizontal") != 0)
+        isGrounded = true;
+    }
+
+    private void Move()
+    {
+        var v = Input.GetAxis("Horizontal");
+        var h = Input.GetAxis("Vertical");
+        transform.Translate(v * MovementSpeed * Time.deltaTime, 0, h * MovementSpeed * Time.deltaTime);
+    }
+
+    private void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            transform.Translate(new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0));
+            GetComponent<Rigidbody>().AddForce(0, JumpSpeed, 0);
+            isGrounded = false;
         }
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            transform.Translate(new Vector3(0, 0, Input.GetAxis("Vertical") * speed * Time.deltaTime));
-        }
-	}
+    }
 }
