@@ -19,6 +19,14 @@ public class Playercontroller : MonoBehaviour
         isGrounded = true;
     }
 
+    private void Animate()
+    {
+        if (true)
+        {
+            
+        }
+    }
+
     private void Move()
     {
         var v = Input.GetAxis("Horizontal");

@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: fb5fef4c9bd3fe14dbc641e215a84dca
+timeCreated: 1440862613
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Lili:Arm_L
+    100004: Lili:Arm_R
+    100006: Lili:Cape_1
+    100008: Lili:Cape_2
+    100010: Lili:Cape_3
+    100012: Lili:Cape_4
+    100014: Lili:Cape_5
+    100016: Lili:Controler_Arm_R
+    100018: Lili:Controler_Hip
+    100020: Lili:Controler_Shoulder_R
+    100022: Lili:Controler_Stomach
+    100024: Lili:Foot_L
+    100026: Lili:Foot_R
+    100028: Lili:Hand_L
+    100030: Lili:Hand_R
+    100032: Lili:Head
+    100034: Lili:Hip
+    100036: Lili:Jiggle2
+    100038: Lili:Jiggle3
+    100040: Lili:Jiggle4
+    100042: Lili:Jiggle5
+    100044: Lili:jiggleTip
+    100046: Lili:joint11
+    100048: Lili:joint12
+    100050: Lili:joint14
+    100052: Lili:joint15
+    100054: Lili:joint16
+    100056: Lili:joint16 1
+    100058: Lili:joint17
+    100060: Lili:joint2
+    100062: Lili:joint3
+    100064: Lili:joint5
+    100066: Lili:joint6
+    100068: Lili:joint8
+    100070: Lili:joint9
+    100072: Lili:Knee_L
+    100074: Lili:Knee_R
+    100076: Lili:Leg_L
+    100078: Lili:Leg_R
+    100080: Lili:Liliohnecape
+    100082: Lili:Locator_Arm_R
+    100084: Lili:Neck
+    100086: Lili:polySurface8
+    100088: Lili:Shoulder_L
+    100090: Lili:Shoulder_R
+    100092: Lili:Stomach
+    400000: //RootNode
+    400002: Lili:Arm_L
+    400004: Lili:Arm_R
+    400006: Lili:Cape_1
+    400008: Lili:Cape_2
+    400010: Lili:Cape_3
+    400012: Lili:Cape_4
+    400014: Lili:Cape_5
+    400016: Lili:Controler_Arm_R
+    400018: Lili:Controler_Hip
+    400020: Lili:Controler_Shoulder_R
+    400022: Lili:Controler_Stomach
+    400024: Lili:Foot_L
+    400026: Lili:Foot_R
+    400028: Lili:Hand_L
+    400030: Lili:Hand_R
+    400032: Lili:Head
+    400034: Lili:Hip
+    400036: Lili:Jiggle2
+    400038: Lili:Jiggle3
+    400040: Lili:Jiggle4
+    400042: Lili:Jiggle5
+    400044: Lili:jiggleTip
+    400046: Lili:joint11
+    400048: Lili:joint12
+    400050: Lili:joint14
+    400052: Lili:joint15
+    400054: Lili:joint16
+    400056: Lili:joint16 1
+    400058: Lili:joint17
+    400060: Lili:joint2
+    400062: Lili:joint3
+    400064: Lili:joint5
+    400066: Lili:joint6
+    400068: Lili:joint8
+    400070: Lili:joint9
+    400072: Lili:Knee_L
+    400074: Lili:Knee_R
+    400076: Lili:Leg_L
+    400078: Lili:Leg_R
+    400080: Lili:Liliohnecape
+    400082: Lili:Locator_Arm_R
+    400084: Lili:Neck
+    400086: Lili:polySurface8
+    400088: Lili:Shoulder_L
+    400090: Lili:Shoulder_R
+    400092: Lili:Stomach
+    4300000: Lili:Liliohnecape
+    4300002: Lili:polySurface8
+    7400000: Run
+    7400002: Take 001
+    9500000: //RootNode
+    13700000: Lili:Liliohnecape
+    13700002: Lili:polySurface8
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lili:Controler_Hip
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R/Lili:Controler_Arm_R
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R/Lili:Controler_Arm_R/Lili:Locator_Arm_R
+        weight: 1
+      - path: Lili:Hip
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L/Lili:Knee_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L/Lili:Knee_L/Lili:Foot_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R/Lili:Knee_R
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R/Lili:Knee_R/Lili:Foot_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1/Lili:joint2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1/Lili:joint2/Lili:joint3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2/Lili:joint5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2/Lili:joint5/Lili:joint6
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3/Lili:joint8
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3/Lili:joint8/Lili:joint9
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4/Lili:joint11
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4/Lili:joint11/Lili:joint12
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5/Lili:joint14
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5/Lili:joint14/Lili:joint15
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Head
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle2/Lili:jiggleTip
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle3/Lili:joint17
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle4
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle4/Lili:joint16
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle5/Lili:joint16 1
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L/Lili:Arm_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L/Lili:Arm_L/Lili:Hand_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R/Lili:Arm_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R/Lili:Arm_R/Lili:Hand_R
+        weight: 1
+      - path: Lili:Liliohnecape
+        weight: 1
+      - path: Lili:polySurface8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 405
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lili:Controler_Hip
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R/Lili:Controler_Arm_R
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R/Lili:Controler_Arm_R/Lili:Locator_Arm_R
+        weight: 1
+      - path: Lili:Hip
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L/Lili:Knee_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L/Lili:Knee_L/Lili:Foot_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R/Lili:Knee_R
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R/Lili:Knee_R/Lili:Foot_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1/Lili:joint2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1/Lili:joint2/Lili:joint3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2/Lili:joint5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2/Lili:joint5/Lili:joint6
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3/Lili:joint8
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3/Lili:joint8/Lili:joint9
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4/Lili:joint11
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4/Lili:joint11/Lili:joint12
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5/Lili:joint14
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5/Lili:joint14/Lili:joint15
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Head
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle2/Lili:jiggleTip
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle3/Lili:joint17
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle4
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle4/Lili:joint16
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle5/Lili:joint16 1
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L/Lili:Arm_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L/Lili:Arm_L/Lili:Hand_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R/Lili:Arm_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R/Lili:Arm_R/Lili:Hand_R
+        weight: 1
+      - path: Lili:Liliohnecape
+        weight: 1
+      - path: Lili:polySurface8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
