@@ -102,7 +102,8 @@ ModelImporter:
     4300000: Lili:Liliohnecape
     4300002: Lili:polySurface8
     7400000: Run
-    7400002: Take 001
+    7400002: Jump
+    7400004: Take 001
     9500000: //RootNode
     13700000: Lili:Liliohnecape
     13700002: Lili:polySurface8
@@ -247,10 +248,130 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 114
+      lastFrame: 184
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lili:Controler_Hip
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R/Lili:Controler_Arm_R
+        weight: 1
+      - path: Lili:Controler_Hip/Lili:Controler_Stomach/Lili:Controler_Shoulder_R/Lili:Controler_Arm_R/Lili:Locator_Arm_R
+        weight: 1
+      - path: Lili:Hip
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L/Lili:Knee_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_L/Lili:Knee_L/Lili:Foot_L
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R/Lili:Knee_R
+        weight: 1
+      - path: Lili:Hip/Lili:Leg_R/Lili:Knee_R/Lili:Foot_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1/Lili:joint2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_1/Lili:joint2/Lili:joint3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2/Lili:joint5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_2/Lili:joint5/Lili:joint6
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3/Lili:joint8
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_3/Lili:joint8/Lili:joint9
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4/Lili:joint11
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_4/Lili:joint11/Lili:joint12
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5/Lili:joint14
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Cape_5/Lili:joint14/Lili:joint15
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Head
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle2
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle2/Lili:jiggleTip
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle3
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle3/Lili:joint17
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle4
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle4/Lili:joint16
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle5
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Jiggle5/Lili:joint16 1
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L/Lili:Arm_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_L/Lili:Arm_L/Lili:Hand_L
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R/Lili:Arm_R
+        weight: 1
+      - path: Lili:Hip/Lili:Stomach/Lili:Neck/Lili:Shoulder_R/Lili:Arm_R/Lili:Hand_R
+        weight: 1
+      - path: Lili:Liliohnecape
+        weight: 1
+      - path: Lili:polySurface8
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
       name: Take 001
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 405
+      firstFrame: 192
+      lastFrame: 308
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
