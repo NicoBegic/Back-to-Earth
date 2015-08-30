@@ -103,7 +103,7 @@ ModelImporter:
     4300002: Lili:polySurface8
     7400000: Run
     7400002: Jump
-    7400004: Take 001
+    7400004: Idle
     9500000: //RootNode
     13700000: Lili:Liliohnecape
     13700002: Lili:polySurface8
@@ -257,7 +257,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -368,16 +368,16 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Take 001
+      name: Idle
       takeName: Take 001
       firstFrame: 192
-      lastFrame: 308
+      lastFrame: 309
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

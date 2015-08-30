@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameController : MonoBehaviour 
 {
-    private int fallTime = 100;
+    private int fallTime = 200;
     private int timer;
 
 	void Update () 
