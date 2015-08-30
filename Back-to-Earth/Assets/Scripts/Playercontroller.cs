@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Playercontroller : MonoBehaviour 
 {
-    public float MovementSpeed = 2f;
+    public float MovementSpeed = 5f;
     public float JumpSpeed = 500f;
 
     private Animator animator;

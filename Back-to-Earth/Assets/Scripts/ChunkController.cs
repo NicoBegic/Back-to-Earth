@@ -50,10 +50,14 @@ public class ChunkController : MonoBehaviour
         for (int p = 0; p < Random.Range(1, MaxPlatformsInRow()); p++)
         {
             randomPlatform = Random.Range(0, Platforms.Length);
+            GameManager.PlatformType = randomPlatform;
+
             float firstposX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
             float firstposY = this.transform.position.y + (Mathf.Sin(this.transform.rotation.eulerAngles.x) / (this.boxCollider.bounds.size.z / 2)) - Random.Range(this.MinFallDistance, MaxFallDistance);
             float firstposZ = this.transform.position.z - this.boxCollider.bounds.size.z / 2;
+
             Instantiate(Platforms[randomPlatform], new Vector3(firstposX, firstposY, firstposZ), Quaternion.identity);
+
             this.Platforms[randomPlatform].transform.position = new Vector3(firstposX, firstposY, firstposZ);
         }
 
@@ -73,12 +77,14 @@ public class ChunkController : MonoBehaviour
     private void CreatePlatform()
     {
         randomPlatform = Random.Range(0, Platforms.Length);
+        GameManager.PlatformType = randomPlatform;
 
         float positionX = this.transform.position.x + Random.Range(-this.boxCollider.bounds.size.x / 2, this.boxCollider.bounds.size.x / 2);
         float positionY = latestPlatform.transform.position.y - (Platforms[randomPlatform].GetComponent<BoxCollider>().bounds.size.y) - Random.Range(MinFallDistance, MaxFallDistance);
         float positionZ = latestPlatform.transform.position.z + (Platforms[randomPlatform].GetComponent<BoxCollider>().bounds.size.z) + CalculateMaxPlatformDistance(); //Random.Range(CalculateMinPlatformDistance(), CalculateMaxPlatformDistance());
 
         Instantiate(Platforms[randomPlatform], new Vector3(positionX, positionY, positionZ), Quaternion.identity);
+
         Platforms[randomPlatform].transform.position = new Vector3(positionX, positionY, positionZ);
     }
 

@@ -5,6 +5,7 @@ public static class GameManager
 {
     public static List<PlatformControler> Platforms = new List<PlatformControler>();
 
+    public static int PlatformType;
     public static int Points;
 
     public static void AddPlatform(PlatformControler platform)

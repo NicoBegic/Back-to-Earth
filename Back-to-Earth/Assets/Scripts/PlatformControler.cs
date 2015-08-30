@@ -18,11 +18,12 @@ public class PlatformControler : MonoBehaviour
         set { platformType = value; } 
     }
 
-    void Start()
+    void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
 
         GameManager.AddPlatform(this);
+        SetPlatformType();
     }
 
     void Update()
@@ -39,8 +40,22 @@ public class PlatformControler : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
+            //if (stepped == false)
+            //{
+            //    platformType.Handle(collision.gameObject);
+            //}
+
+            platformType.Handle(collision.gameObject);
             stepped = true;
             Falls = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            platformType.Exit(collision.gameObject);
         }
     }
 
@@ -66,5 +81,15 @@ public class PlatformControler : MonoBehaviour
     {
         float newPositionX = Chunk.transform.position.x + Random.Range(-Chunk.transform.localScale.x /2, Chunk.transform.localScale.x /2);
         this.transform.position = new Vector3(newPositionX, this.transform.position.y, this.transform.position.z);
+    }
+
+    private void SetPlatformType()
+    {
+        if (GameManager.PlatformType == 0)
+            PlatformType = new EarthPlatform();
+        else if (GameManager.PlatformType == 1)
+            PlatformType = new IcePlatform();
+        else if (GameManager.PlatformType == 2)
+            PlatformType = new SandPlatform();
     }
 }
