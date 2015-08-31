@@ -9,9 +9,12 @@ public class Playercontroller : MonoBehaviour
     private Animator[] animators;
     private bool isGrounded;
     private bool isDead;
+    private bool gameStarted;
+    private Rigidbody rigidBody;
 
     void Start()
     {
+        this.rigidBody = GetComponent<Rigidbody>();
         this.animators = GetComponentsInChildren<Animator>();
     }
 
@@ -31,6 +34,10 @@ public class Playercontroller : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             GameManager.Points += 200;
+        }
+        if (collision.gameObject.tag == "StartPlatform")
+        {
+            gameStarted = true;
         }
     }
 
@@ -59,10 +66,10 @@ public class Playercontroller : MonoBehaviour
         {
             animators[1].SetBool("IsJumping", true);
             animators[1].SetBool("IsStaying", false);
-            GetComponent<Rigidbody>().AddForce(0, JumpSpeed, 0);
+            rigidBody.AddForce(0, JumpSpeed, 0);
             isGrounded = false;
         }
-        if (isGrounded == false && isDead == false)
+        if (isGrounded == false && isDead == false && gameStarted)
         {
             GameManager.Points++;
         }
