@@ -6,29 +6,31 @@ public class Playercontroller : MonoBehaviour
     public float MovementSpeed = 5f;
     public float JumpSpeed = 500f;
 
-    private Animator animator;
+    private Animator[] animators;
     private bool isGrounded;
+    private bool isDead;
 
     void Start()
     {
-        this.animator = GetComponentInChildren<Animator>();
+        this.animators = GetComponentsInChildren<Animator>();
     }
 
     void Update()
     {
         Move();
         Jump();
+        CheckDeath();
     }
 
     void OnCollisionEnter(Collision collision)
     {
         isGrounded = true;
-        animator.SetBool("IsJumping", false);
-        animator.SetBool("IsStaying", true);
+        animators[1].SetBool("IsJumping", false);
+        animators[1].SetBool("IsStaying", true);
 
         if (collision.gameObject.tag == "Platform")
         {
-            GameManager.Points++;
+            GameManager.Points += 200;
         }
     }
 
@@ -39,14 +41,14 @@ public class Playercontroller : MonoBehaviour
 
         if (v != 0 && isGrounded)
         {
-            animator.SetBool("IsRunning", true);
+            animators[1].SetBool("IsRunning", true);
         }
         else if (h != 0 && isGrounded)
         {
-            animator.SetBool("IsRunning", true);
+            animators[1].SetBool("IsRunning", true);
         }
         else
-            animator.SetBool("IsRunning", false);
+            animators[1].SetBool("IsRunning", false);
 
         transform.Translate(v * MovementSpeed * Time.deltaTime, 0, h * MovementSpeed * Time.deltaTime);
     }
@@ -55,10 +57,27 @@ public class Playercontroller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
-            animator.SetBool("IsJumping", true);
-            animator.SetBool("IsStaying", false);
+            animators[1].SetBool("IsJumping", true);
+            animators[1].SetBool("IsStaying", false);
             GetComponent<Rigidbody>().AddForce(0, JumpSpeed, 0);
             isGrounded = false;
+        }
+        if (isGrounded == false && isDead == false)
+        {
+            GameManager.Points++;
+        }
+    }
+
+    private void CheckDeath()
+    {
+        if (GameManager.Platforms.Count > 0)
+        {
+            if (this.transform.position.y < GameManager.Platforms[GameManager.Platforms.Count - 1].transform.position.y)
+            {
+                isDead = true;
+                GameManager.Platforms.Clear();
+                animators[1].SetBool("IsDead", true);
+            }
         }
     }
 }

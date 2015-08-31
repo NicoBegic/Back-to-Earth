@@ -33,11 +33,14 @@ public class ChunkController : MonoBehaviour
 
     private void CheckInSight()
     {
-        if (Player.GetComponentInChildren<Camera>().farClipPlane  + Player.transform.position.z 
-            >= this.transform.position.z - (this.transform.localScale.z / 2))
+        if (Player != null)
         {
-            LoadChunk();
-            loaded = true;
+            if (Player.GetComponentInChildren<Camera>().farClipPlane + Player.transform.position.z
+            >= this.transform.position.z - (this.transform.localScale.z / 2))
+            {
+                LoadChunk();
+                loaded = true;
+            }
         }
     }
 

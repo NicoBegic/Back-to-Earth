@@ -8,6 +8,8 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\UnityEngine.UI.dll (this message is harmless)
@@ -16,12 +18,21 @@ Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-
 Loading C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.089 seconds
+- Completed reload, in  0.095 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Nico\Desktop\Projekte\Back-to-Earth_SourceTree\Back-to-Earth\Back to Earth_Data\Managed\System.dll (this message is harmless)
+Shader 'Nature/Terrain/Specular': dependency 'BaseMapShader' shader 'Hidden/TerrainEngine/Splatmap/Specular-Base' not found
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: ec4 -> priority: 1 
+  Thread -> id: 1648 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 16.724756 ms
+
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 507.
+Total: 2.308694 ms (FindLiveObjects: 0.053732 ms CreateObjectMapping: 0.030790 ms MarkObjects: 0.362846 ms  DeleteObjects: 1.858909 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 568 -> priority: 1 

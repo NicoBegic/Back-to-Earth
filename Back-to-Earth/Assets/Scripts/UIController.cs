@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (timer >= 5)
+        if (timer >= 10)
         {
             StartGame();
         }
@@ -25,8 +25,8 @@ public class UIController : MonoBehaviour
 
     public void StartGame()
     {
-        //Application.LoadLevel("");#
-        Debug.Log("GAMESTARTED");
+        GameManager.Points = 0;
+        Application.LoadLevel("LevelGeneration");
     }
 
     public void ExitGame()

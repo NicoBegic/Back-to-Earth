@@ -14,6 +14,14 @@ public class PointsController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        text.text = string.Format("Points : {0}", GameManager.Points);
+        UpdateText();
 	}
+
+    private void UpdateText()
+    {
+        if (GameManager.Points > 0)
+        {
+            text.text = string.Format("Points : {0}", GameManager.Points);
+        }
+    }
 }

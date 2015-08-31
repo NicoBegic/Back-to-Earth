@@ -9,7 +9,7 @@ public class PlatformControler : MonoBehaviour
     private Rigidbody rigidbody;
 
     public bool Falls;
-    private int timer = 100;
+    private int timer = 30;
     private bool stepped;
 
     public Platform PlatformType 
